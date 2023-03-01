@@ -8,13 +8,11 @@ export default class FormComponent extends Component
     @tracked Username='';
     @tracked Password='';
 
-    get disableSubmit(){
-        return !this.Username.length ||!this.Password.length
-    }
+
     @action async onSubmit(){
         const data = {
-            Username: this.Username,
-            Password: this.Password
+            email: this.Username,
+            password: this.Password
         }
         const response = await fetch (url,{
             method:'POST',
