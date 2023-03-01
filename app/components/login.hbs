@@ -1,12 +1,41 @@
-
-<div class="login" >
-    <form {{on "submit" this.onSubmit}}> 
+{{!-- <div class="login">
+    <form {{on "submit" this.onSubmit}}>
         <span>Username</span>
-        <Input placeholder="Username" @value={{this.Username}}/>
+        <Input placeholder="Username" @value={{this.Username}} />
         <br>
         <span>Password</span>
-        <Input  placeholder ="Password" @value={{this.Password}}/>
-        <button type="submit" disabled={{this.disableSubmit}}>Login</button>
+        <Input placeholder="Password" @value={{this.Password}} />
+        <button type="submit" class="btn btn-primary ml-auto" disabled={{this.disableSubmit}}>Login</button>
     </form>
+</div> --}}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm"></div>
+        <div class="col-sm">
+            <div class="card">
+                <h2 class="card-title">
+                    Login
+                </h2>
+                <form {{on "submit" this.onSubmit}} class="form-inline w-400 mw-full">
+                    <div class="form-group">
+                        <label class="required w-100" for="username">Username</label>
+                        <Input type="text" class="form-control" placeholder="Username" id="username" required="required"
+                            @value={{this.Username}} />
+                    </div>
+                    <div class="form-group">
+                        <label class="required w-100" for="password">Password</label>
+                        <Input type="password" class="form-control" placeholder="Password" id="password"
+                            required="required" @value={{this.Password}} />
+                    </div>
+                    <div class="form-group mb-0">
+                        <input type="submit" class="btn btn-primary btn-block" value="Login">
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="col-sm"></div>
+    </div>
 </div>
+
 {{yield}}
