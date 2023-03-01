@@ -2,10 +2,11 @@
 <div class="login" >
     <form {{on "submit" this.onSubmit}}> 
         <span>Username</span>
-        <input id="username" type="text" placeholder="Username">
+        <Input placeholder="Username" @value={{this.Username}}/>
+        <br>
         <span>Password</span>
-        <input id="password" type="text" placeholder ="Password">
-        <button type="submit" disabled={{this.disablesubmit}} value="submit">Login</button>
+        <Input  placeholder ="Password" @value={{this.Password}}/>
+        <button type="submit" disabled={{this.disableSubmit}}>Login</button>
     </form>
 </div>
 {{yield}}
