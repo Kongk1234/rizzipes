@@ -1,13 +1,11 @@
 import Component from '@glimmer/component';
-import {action} from '@ember/object';
+import { action } from '@ember/object';
 import { tracked } from '@glimmer/tracking';
 
-export default class FormComponent extends Component
-{
-    url = '';
-    @tracked Username='';
-    @tracked Password='';
-
+export default class FormComponent extends Component {
+  url = '';
+  @tracked Username = '';
+  @tracked Password = '';
 
     @action async onSubmit(){
         const data = {
