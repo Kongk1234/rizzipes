@@ -13,25 +13,15 @@
 
     {{!-- Halfmoon CSS --}}
     <link href="https://cdn.jsdelivr.net/npm/halfmoon@1.1.1/css/halfmoon.min.css" rel="stylesheet" />
-    {{!--
-    Or,
-    Use the following (CSS file with variables):
-    <link href="https://cdn.jsdelivr.net/npm/halfmoon@1.1.1/css/halfmoon-variables.min.css" rel="stylesheet" />
-    Learn more: https://www.gethalfmoon.com/docs/customize/#notes-on-browser-compatibility
-    --}}
+
 </head>
 
 <body class="with-custom-webkit-scrollbars with-custom-css-scrollbars" data-dm-shortcut-enabled="true"
     data-set-preferred-mode-onload="true">
     {{!-- Modals go here --}}
-    {{!-- Reference: https://www.gethalfmoon.com/docs/modal --}}
 
     {{!-- Page wrapper start --}}
     <div class="page-wrapper with-navbar with-sidebar" data-sidebar-type="full-height overlayed-sm-and-down">
-
-        {{!-- Sticky alerts (toasts), empty container --}}
-        {{!-- Reference: https://www.gethalfmoon.com/docs/sticky-alerts-toasts --}}
-        <div class="sticky-alerts"></div>
 
         {{!-- Navbar start --}}
         <nav class="navbar">
@@ -45,7 +35,7 @@
 
         {{!-- Sidebar start --}}
         <div class="sidebar">
-            {{!-- Reference: https://www.gethalfmoon.com/docs/sidebar --}}
+            <Category></Category>
         </div>
         {{!-- Sidebar end --}}
 
