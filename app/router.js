@@ -11,5 +11,6 @@ Router.map(function () {
   this.route('Users');
   this.route('Rizzpies');
   this.route('Login');
+  this.route('Register');
   this.route('testroute');
 });

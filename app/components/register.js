@@ -4,7 +4,7 @@ import { tracked } from '@glimmer/tracking';
 import { inject as service } from '@ember/service';
 
 export default class FormComponent extends Component {
-  url = 'https://api.theredwiking.com/auth';
+  url = 'https://api.theredwiking.com/user';
   @tracked Username = '';
   @tracked Password = '';
   @tracked Email = '';
@@ -23,14 +23,9 @@ export default class FormComponent extends Component {
       body: JSON.stringify(data),
     });
     if (response.ok) {
-      //router.route();
-      let json = await response.json();
-      console.log(json);
-
-      //document.cookie +=`logintoken=${response}`
-      this.router.transitionTo('Index')
+      this.router.transitionTo('Index');
     } else {
-      this.router.transitionTo('Register');
+      this.router.transitionTo('Login');
       //create error message and route user back to login
     }
   }
