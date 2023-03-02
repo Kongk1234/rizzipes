@@ -1,6 +1,12 @@
 import Component from '@glimmer/component';
-import { action } from '@ember/object';
-import { tracked } from '@glimmer/tracking';
+import {
+  action
+} from '@ember/object';
+import {
+  tracked
+} from '@glimmer/tracking';
+import { inject as service } from '@ember/service';
+
 
 export default class FormComponent extends Component {
   @tracked title = '';
@@ -8,6 +14,7 @@ export default class FormComponent extends Component {
   @tracked duration = '';
   @tracked steps = '';
   @tracked ingredients = '';
+  @service router;
 
   @action async onSubmit(e) {
     e.preventDefault();
@@ -18,13 +25,16 @@ export default class FormComponent extends Component {
       steps: this.steps,
       ingredients: this.ingredients,
     };
+    let cookies = document.cookie.split("; ");
+    let result = cookies.filter(word => word.includes("auth="));
+    let token = result[0].split("auth=")[1]
 
     var myHeaders = new Headers();
     myHeaders.append('Content-Type', 'application/json');
     myHeaders.append(
-      'Authorization',
-      'Bearer ' +
-        'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAdGVzdC5jb20iLCJpZCI6MSwiaWF0IjoxNjc3NzU4MzIxLCJleHAiOjE2Nzc3NjE5MjF9.O7ENu14ZWFtlWmAOE25w30GqCrjcQ7kIJ2qB6tmVZ9I'
+        'Authorization',
+        'Bearer ' +
+        token
     );
 
     const response = await fetch('https://api.theredwiking.com/recipe/', {
@@ -35,7 +45,7 @@ export default class FormComponent extends Component {
       body: JSON.stringify(data),
     });
     if (response.ok) {
-      console.log('ska vi ikke det');
+      this.router.transitionTo('Index')
     } else {
       console.log('fuck');
     }
