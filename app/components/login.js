@@ -4,6 +4,7 @@ import { tracked } from '@glimmer/tracking';
 import { inject as service } from '@ember/service';
 
 export default class FormComponent extends Component {
+
   url = 'https://api.theredwiking.com/auth';
   @tracked Username = '';
   @tracked Password = '';
@@ -23,12 +24,11 @@ export default class FormComponent extends Component {
       body: JSON.stringify(data),
     });
     if (response.ok) {
-      //router.route();
       let json = await response.json();
       console.log(json);
-
-      //document.cookie +=`logintoken=${response}`
+      
       this.router.transitionTo('Index')
+      
     } else {
       this.router.transitionTo('Register');
       //create error message and route user back to login
