@@ -26,7 +26,7 @@ export default class FormComponent extends Component {
     if (response.ok) {
       let json = await response.json();
       console.log(json);
-      
+      document.cookie =`auth=${json.token}; path=/; expires=0;`
       this.router.transitionTo('Index')
       
     } else {
