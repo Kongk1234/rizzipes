@@ -1,4 +1,40 @@
 {{page-title "Rizzipe"}}
 {{rizzipe object=model}}
-<Rizzipe></Rizzipe>
+<div class="container-fluid">
+        <div class="col-sm"></div>
+        <div class="col-sm">
+            {{#each @model as |item|}}
+            <div class="w-800 mw-full">
+                <div class="card p-0">
+                    <div>
+                        <h2 class="content-title">
+                            <center>
+                                    {{item.title}}
+                            </center>
+                        </h2>
+                         <div class="content">
+                            <div class="w-400 mw-full"> <!-- w-400 = width: 40rem (400px), mw-full = max-width: 100% -->
+                                <div class="card">
+                                    <p> {{item.ingredients}}</p>  
+                                </div>
+                            </div>
+                        </div>
+                        <center>
+                            <div class="w-700 mw-full"> <!-- w-400 = width: 40rem (400px), mw-full = max-width: 100% -->
+                                <div class="card">
+                                    <p class="text-muted">
+                                        {{item.steps}}
+                                    </p>        
+                                </div>
+                            </div>
+                        </center>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+        <div class="col-sm"></div>
+</div>
+
+
 {{outlet}}

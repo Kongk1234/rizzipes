@@ -1,11 +1,9 @@
-import Ember from 'ember';
+import Route from '@ember/routing/route';
 
-export default Ember.Route.extend({
-  model() {
-    return {
-      name: 'John',
-      surname: 'Doe'
-    }
+export default class RizzipeRoute extends Route {
+  async model() {
+    let response = await fetch('https://api.theredwiking.com/recipe/1');
+    let parsed = await response.json();
+    return parsed;
   }
-});
-
+}
