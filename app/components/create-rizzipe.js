@@ -26,7 +26,6 @@ export default class FormComponent extends Component {
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
     myHeaders.append("Authorization", "Bearer " + "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAdGVzdC5jb20iLCJpZCI6MSwiaWF0IjoxNjc3NzU4MzIxLCJleHAiOjE2Nzc3NjE5MjF9.O7ENu14ZWFtlWmAOE25w30GqCrjcQ7kIJ2qB6tmVZ9I");
-   //console.log(myHeaders);
 
     const response = await fetch("https://api.theredwiking.com/recipe/", {
       method: 'POST',
@@ -40,16 +39,5 @@ export default class FormComponent extends Component {
     } else {
       console.log("fuck");
     }
-    // const options = {
-    //   method: 'POST',
-    //   headers: myHeaders,
-    //   body: JSON.stringify(data),
-    //   Credentials: 'include',
-    // };
-
-    // fetch('https://api.theredwiking.com/recipe/', options)
-    //     .then(response => response.json())
-    //     .then(data => console.log(data))
-    //     .catch(error => console.log(error));
   }
 }
