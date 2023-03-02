@@ -1,0 +1,18 @@
+{{#each @rizzipes as |item|}}
+<div class="w-400 mw-full">
+    <div class="card p-0">
+        <div class="content">
+            <h2 class="content-title">
+                {{item.title}}
+            </h2>
+            <p class="text-muted">
+                {{item.steps}}
+            </p>
+            <div class="text-right">
+                <LinkTo @route="Rizzipe" @query={{hash id=item.id}} class="btn button">Show Rizzipe</LinkTo>
+            </div>
+        </div>
+    </div>
+</div>
+{{/each}}
+{{yield}}

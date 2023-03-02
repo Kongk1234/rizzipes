@@ -4,7 +4,6 @@ import { tracked } from '@glimmer/tracking';
 import { inject as service } from '@ember/service';
 
 export default class FormComponent extends Component {
-
   url = 'https://api.theredwiking.com/auth';
   @tracked Username = '';
   @tracked Password = '';
