@@ -1,0 +1,10 @@
+<div class="createRizzipe">
+    <form {{on "submit" this.onSubmit}}>
+        <Input type="text" class="form-control" placeholder="Title" @value={{this.title}} /> <br>
+        <Input type="number" class="form-control" placeholder="Category" @value={{this.category}} /> <br>
+        <Input type="number" class="form-control" placeholder="Duration" @value={{this.duration}} /> <br>
+        <Textarea class="form-control" placeholder="Steps" @value={{this.steps}}/> <br>
+        <Textarea class="form-control" placeholder="Ingredients" @value={{this.ingredients}} /> <br>
+        <input class="btn btn-primary" type="submit" value="Create rizzipe">
+    </form>
+</div>

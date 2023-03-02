@@ -14,4 +14,5 @@ Router.map(function () {
   this.route('Register');
   this.route('testroute');
   this.route('rizzipe');
+  this.route('createRizzipe');
 });

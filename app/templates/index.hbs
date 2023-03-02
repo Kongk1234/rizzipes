@@ -1,7 +1,4 @@
 {{page-title "Index"}}
-
-
-
 <div class="container-fluid">
     <div class="row">
         <div class="col-sm"></div>
@@ -17,7 +14,7 @@
                             {{item.steps}}
                         </p>
                         <div class="text-right">
-                            <a href="#" class="btn">Read more</a>
+                            <LinkTo @route="Rizzipe" @query={{hash id=item.id}} class="btn button">Show Rizzipe</LinkTo>
                         </div>
                     </div>
                 </div>
