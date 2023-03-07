@@ -1,14 +1,40 @@
 {{#each @rizzipes as |item|}}
-<div class="w-400 mw-full">
+<div class="mw-full">
     <div class="card p-0">
+        {{!-- <img src="..." class="img-fluid rounded-top" alt="..."> --}}
         <div class="content">
             <h2 class="content-title">
                 {{item.title}}
             </h2>
+            <div>
+                <span class="text-muted">
+                    <i class="fa fa-clock-o mr-5" aria-hidden="true"></i> May 4th, 2020
+                </span>
+            </div>
+            <div>
+                <span class="badge">
+                    <i class="fa fa-comments text-primary mr-5" aria-hidden="true"></i> 5 comments
+                </span>
+                <span class="badge ml-5">
+                    {{item.likes}} likes
+                </span>
+                <span class="badge ml-5">
+                    {{item.duration}} mins
+                </span>
+                <span class="badge ml-5">
+                    {{item.ingredients}} ingredients
+                </span>
+            </div>
+        </div>
+        <hr />
+        <div class="content">
+            <h2 class="content-title">
+                Steps
+            </h2>
             <p class="text-muted">
                 {{item.steps}}
             </p>
-            <div class="text-right">
+            <div class="text-center mt-20">
                 <LinkTo @route="Rizzipe" @query={{hash id=item.id}} class="btn button">Show Rizzipe</LinkTo>
             </div>
         </div>
