@@ -1,0 +1,9 @@
+<div class="comment">
+    <div class="card">
+        <form {{on "submit" this.onSubmit}}>
+            <Textarea class="form-control" cols="30" rows="10" @value={{this.content}} placeholder="Write comment"></Textarea> <br>
+            <input class="btn btn-primary" type="submit" value="Post">
+            <button class="btn" type="button" {{on "click" this.like}}><i class="fa fa-heart text-danger mr-5" aria-hidden="true"></i> like</button>
+        </form>
+    </div>
+</div>

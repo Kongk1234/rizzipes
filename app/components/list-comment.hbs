@@ -1,0 +1,16 @@
+<ul>
+    <center>
+        <h4>Comments</h4>
+    </center>
+    {{#each @comments as |comment|}}
+    <li>
+        <div class="card w-400">
+            <p>
+                {{comment.content}}
+            </p>
+        </div>
+    </li>
+    {{/each}}
+</ul>
+
+{{yield}}
