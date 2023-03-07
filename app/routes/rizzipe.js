@@ -6,6 +6,7 @@ export default class RizzipeRoute extends Route {
       `https://api.theredwiking.com/recipe/${params.id}`
     );
     let parsed = await response.json();
+    console.log(parsed);
     return parsed;
   }
 }
