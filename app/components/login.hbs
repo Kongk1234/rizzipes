@@ -8,19 +8,14 @@
                 </h2>
                 <form {{on "submit" this.onSubmit}} class="form-inline w-400 mw-full">
                     <div class="form-group">
-                        <label class="required w-100" for="username">Username</label>
-                        <Input type="text" class="form-control" placeholder="Username" id="username" required="required"
-                            @value={{this.Username}} />
+                        <label class="required w-100" for="Email">Email</label>
+                        <Input type="email" class="form-control" placeholder="Email" id="Email"
+                            required="required" @value={{this.Email}} />
                     </div>
                     <div class="form-group">
                         <label class="required w-100" for="password">Password</label>
                         <Input type="password" class="form-control" placeholder="Password" id="password"
                             required="required" @value={{this.Password}} />
-                    </div>
-                    <div class="form-group">
-                        <label class="required w-100" for="Email">Email</label>
-                        <Input type="email" class="form-control" placeholder="Email" id="Email"
-                            required="required" @value={{this.Email}} />
                     </div>
                     <div class="form-group mb-0">
                         <input type="submit" class="btn btn-primary btn-block" value="Login">
