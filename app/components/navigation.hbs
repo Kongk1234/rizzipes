@@ -1,5 +1,5 @@
 <div class="navbar-content">
-    <button class="btn btn-action" id="toggle-sidebar-btn" type="button" onclick="halfmoon.toggleSidebar()">
+    <button class="btn btn-action fa fa-bars" id="toggle-sidebar-btn" type="button" onclick="halfmoon.toggleSidebar()">
     </button>
 </div>
 
@@ -8,10 +8,16 @@
 </LinkTo>
 
 <ul class="navbar-nav ml-auto">
+    {{#if this.showRizzipe}}
     <li class="nav-item">
         <LinkTo @route="CreateRizzipe" class="button nav-link">Create Rizzipe</LinkTo>
     </li>
-    <li class="nav-item">
+    <li class="nav-item">   
+        <LinkTo @route="Login" class="button nav-link">Logged in</LinkTo>
+    </li>
+    {{else}}
+    <li class="nav-item">   
         <LinkTo @route="Login" class="button nav-link">Login</LinkTo>
     </li>
+    {{/if}}
 </ul>
