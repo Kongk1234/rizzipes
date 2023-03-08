@@ -5,7 +5,6 @@ import { inject as service } from '@ember/service';
 
 export default class FormComponent extends Component {
   @tracked title = '';
-  @tracked category = '';
   @tracked duration = '';
   @tracked steps = '';
   @tracked ingredients = '';
@@ -15,10 +14,10 @@ export default class FormComponent extends Component {
     e.preventDefault();
     const data = {
       title: this.title,
-      categoryid: parseInt(this.category),
+      categoryid: parseInt(document.getElementById("category").value),
       duration: parseInt(this.duration),
       steps: this.steps,
-      ingredients: this.ingredients,
+      ingredients: this.ingredients.split(", "),
     };
     let cookies = document.cookie.split('; ');
     let result = cookies.filter((word) => word.includes('auth='));
