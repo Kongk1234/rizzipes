@@ -11,3 +11,4 @@ RUN npm run build
 FROM nginx:latest
 
 COPY --from=builder /usr/src/app/dist /usr/share/nginx/html
+COPY --from=builder /usr/src/app/default.conf /etc/nginx/conf.d/default.conf
