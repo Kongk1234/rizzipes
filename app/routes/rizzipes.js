@@ -9,7 +9,7 @@ export default class RizzipesRoute extends Route {
 
   async model(params) {
     let response = await fetch(
-      `https://api.theredwiking.com/recipe/category/${params.id}`
+      `http://172.16.115.36:3000/recipe/category/${params.id}`
     );
     let parsed = await response.json();
     return parsed;
