@@ -40,17 +40,17 @@ export default class FormComponent extends Component {
     myHeaders.append('Content-Type', 'application/json');
     myHeaders.append('Authorization', 'Bearer ' + token);
 
-    // const response = await fetch('http://172.16.115.36:3000/recipe/', {
-    //   method: 'POST',
-    //   mode: 'cors',
-    //   headers: myHeaders,
-    //   credentials: 'same-origin',
-    //   body: JSON.stringify(data),
-    // });
-    // if (response.ok) {
-    //   this.router.transitionTo('Index');
-    // } else {
-    //   console.log('fuck');
-    // }
+    const response = await fetch('https://api.theredWiking.com/recipe/', {
+      method: 'POST',
+      mode: 'cors',
+      headers: myHeaders,
+      credentials: 'same-origin',
+      body: JSON.stringify(data),
+    });
+    if (response.ok) {
+      this.router.transitionTo('Index');
+    } else {
+      console.log('fuck');
+    }
   }
 }
